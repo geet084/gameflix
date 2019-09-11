@@ -1,10 +1,13 @@
 import React from 'react';
+import Games from '../Games/Games';
+import Header from '../Header/Header';
 
 function App() {
   return (
-    <div className="App">
-      GAMEFLIX
-    </div>
+    <main className="App">
+      <Header />
+      <Games />
+    </main>
   );
 }
 
