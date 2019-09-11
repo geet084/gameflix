@@ -1,0 +1,11 @@
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px 0 auto;
+}
+
+.empty {
+  height: 0;
+  width: 140px;
+}
