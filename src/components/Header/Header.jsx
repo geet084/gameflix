@@ -3,9 +3,7 @@ import React from 'react';
 export const Header = () => {
   return (
     <header>
-      <div>
-        GAMEFLIX
-      </div>
+      <h1 className="title">GAMEFLIX</h1>
     </header>
   )
 }

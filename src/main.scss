@@ -1,7 +1,9 @@
 @import './App/App.scss';
-@import './Games/Games.scss';
-@import './Game/Game.scss';
-@import './Header/Header.scss';
+@import './components/Games/Games.scss';
+@import './components/GameTile/GameTile.scss';
+@import './components/GameInfo/GameInfo.scss';
+@import './components/Header/Header.scss';
+@import './components/Loading/Loading.scss';
 
 body {
   margin: 0;
