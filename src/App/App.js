@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Games from '../Games/Games';
-import Header from '../Header/Header';
+import Games from '../components/Games/Games';
+import Header from '../components/Header/Header';
 
 const App = () => {
   const [hasError, setErrors] = useState('')
