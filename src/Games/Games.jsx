@@ -7,7 +7,7 @@ export const Games = ({ games }) => {
   
   return (
     <article>
-      {games[0] && gameList}
+      {gameList}
       {blankGames}
     </article>
   )

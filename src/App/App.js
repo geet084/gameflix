@@ -27,7 +27,7 @@ const App = () => {
     <main className="App">
       {hasError !== "" && <h3 className="err-msg">{hasError}</h3>}
       <Header />
-      <Games games={games} />
+      {games[0] ? <Games games={games} /> : <h1>Loading</h1> }
     </main>
   );
 }
