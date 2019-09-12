@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+
+.err-msg {
+  font-size: 2rem;
+  position: relative;
+  top: 80px;
+  z-index: 5;
+}
