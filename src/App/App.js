@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Games from '../components/Games/Games';
 import Header from '../components/Header/Header';
+import Loading from '../components/Loading/Loading';
 
 const App = () => {
   const [hasError, setErrors] = useState('')
@@ -27,7 +28,7 @@ const App = () => {
     <main className="App">
       {hasError !== "" && <h3 className="err-msg">{hasError}</h3>}
       <Header />
-      {games[0] ? <Games games={games} /> : <h1>Loading</h1> }
+      {games[0] ? <Games games={games} /> : <Loading /> }
     </main>
   );
 }
