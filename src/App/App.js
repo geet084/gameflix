@@ -32,10 +32,18 @@ const App = () => {
     fetchData();
   }, []);
 
+  const handleSearch = ({ target }) => {
+    const nameIsNotBlank = !(target.value === ' ' && searchTerms.name.length < 1)
+    const nameSearch = target.id === 'name' && nameIsNotBlank;
+    const value = nameSearch ? target.value : parseInt(target.value);
+
+    setSearchTerms({ ...searchTerms, [target.id]: value });
+  }
+
   return (
     <main className="App">
       {hasError !== "" && <h3 className="err-msg">{hasError}</h3>}
-      <Header />
+      <Header handleSearch={handleSearch} />
       {games[0] ? <Games games={games} /> : <Loading /> }
     </main>
   );
