@@ -4,8 +4,16 @@ import Header from '../components/Header/Header';
 import Loading from '../components/Loading/Loading';
 
 const App = () => {
-  const [hasError, setErrors] = useState('')
-  const [games, setGames] = useState([])
+  const defaultSearch = {
+    name: '',
+    min_players: 0,
+    max_players: 0,
+    max_playtime: 0,
+    min_rating: 0
+  }
+  const [hasError, setErrors] = useState('');
+  const [searchTerms, setSearchTerms] = useState(defaultSearch);
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
     const url = process.env.REACT_APP_INITIAL_FETCH_URL;
