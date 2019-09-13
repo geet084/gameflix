@@ -16,21 +16,23 @@ const App = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    const url = process.env.REACT_APP_INITIAL_FETCH_URL;
+    fetchData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerms]);
 
-    async function fetchData() {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) throw Error(response.statusText);
-        const result = await response.json();
-        setGames(result.games);
-      } catch ({ message }) {
-        setErrors(`Oops! It looks like there was an issue: ${message}`);
-      }
+  const fetchData = async () => {
+    const url = process.env.REACT_APP_SEARCH_URL;
+    const client = process.env.REACT_APP_CLIENT;
+
+    try {
+      const response = await fetch(url + client);
+      if (!response.ok) throw Error(response.statusText);
+      const result = await response.json();
+      setGames(result.games);
+    } catch ({ message }) {
+      setErrors(`Oops! It looks like there was an issue: ${message}`);
     }
-
-    fetchData();
-  }, []);
+  }
 
   const handleSearch = ({ target }) => {
     const nameIsNotBlank = !(target.value === ' ' && searchTerms.name.length < 1)
@@ -49,7 +51,7 @@ const App = () => {
         handleSearch={handleSearch}
         handleReset={handleReset}
       />
-      {games[0] ? <Games games={games} /> : <Loading /> }
+      {games[0] ? <Games games={games} /> : <Loading />}
     </main>
   );
 }
