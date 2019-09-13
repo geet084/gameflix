@@ -62,14 +62,20 @@ const App = () => {
 
   const handleReset = () => setSearchTerms({ ...defaultSearch });
 
+
+  const listedGames = games.filter(game => {
+    return game && (game.average_user_rating >= searchTerms.min_rating || !searchTerms.min_rating)
+  });
+
   return (
     <main className="App">
       {hasError !== "" && <h3 className="err-msg">{hasError}</h3>}
       <Header
+        {...searchTerms}
         handleSearch={handleSearch}
         handleReset={handleReset}
       />
-      {games[0] ? <Games games={games} /> : <Loading />}
+      {games[0] ? <Games games={listedGames} /> : <Loading />}
     </main>
   );
 }
