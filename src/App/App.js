@@ -40,10 +40,15 @@ const App = () => {
     setSearchTerms({ ...searchTerms, [target.id]: value });
   }
 
+  const handleReset = () => setSearchTerms({ ...defaultSearch });
+
   return (
     <main className="App">
       {hasError !== "" && <h3 className="err-msg">{hasError}</h3>}
-      <Header handleSearch={handleSearch} />
+      <Header
+        handleSearch={handleSearch}
+        handleReset={handleReset}
+      />
       {games[0] ? <Games games={games} /> : <Loading /> }
     </main>
   );
