@@ -16,7 +16,7 @@ export const Games = ({ games }) => {
 
 
   return (
-    <article>
+    <article className="games">
       {selectedGame === '' ? gameTiles : <GameInfo toggle={toggle} {...game} />}
       {blankTiles}
     </article>
