@@ -8,7 +8,29 @@
     justify-content: center;
   }
   .back {
+    position: fixed;
+    top: 85px;
+    right: 10px;
     color: red;
-    font-size: 4rem;
+    font-size: 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .desc {
+    overflow: hidden;
+  }
+
+  .ellipsis {
+    text-overflow: ellipsis;
+  }
+}
+@media screen and (max-width: 800px) {
+  .info .back {
+    position: fixed;
+    top: 160px;
+    right: 10px;
   }
 }
