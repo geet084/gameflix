@@ -1,6 +1,6 @@
 header {
   background-color: #fff;
-  height: 50px;
+  height: 75px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -14,14 +14,56 @@ header {
     padding-top: 10px;
   }
 
+  .num {
+    color: red;
+    margin: 0;
+  }
+
   .options {
     display: flex;
     justify-content: space-around;
+    align-self: center;
+
+    .block {
+      display: flex;
+      margin: auto;
+    }
+
+    .drop-downs {
+      display: flex;
+      flex-direction: column;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+
+    button {
+      height: 20px;
+      margin: auto;
+    }
 
     input {
       background-color: lightgreen;
       height: 20px;
       margin: auto;
     }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    height: 150px;
+  }
+
+  header,
+  .options {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header .options span {
+    font-size: 0.65rem;
   }
 }
