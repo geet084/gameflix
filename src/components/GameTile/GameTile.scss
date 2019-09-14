@@ -20,10 +20,17 @@
 
   .btm-text {
     margin: 0 0 3px 0;
+
     p {
       display: flex;
       justify-content: space-between;
       margin: 3px 10px;
     }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .game {
+    min-width: 310px;
   }
 }
