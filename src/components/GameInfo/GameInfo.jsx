@@ -12,6 +12,10 @@ export const GameInfo = (props) => {
   const disc = discount && (discount * 100).toFixed(0) > 0
     ? <span className="less">{Math.abs((discount * 100).toFixed(0))}% off</span>
     : <span className="more">{Math.abs((discount * 100).toFixed(0))}% more</span>
+  
+  const lowComp = (((price / historical_low_price) - 1) * 100).toFixed(0) < 0.01
+    ? <span className="less">{Math.abs((((price / historical_low_price) - 1) * 100).toFixed(0))}% off</span>
+    : <span className="more">{Math.abs((((price / historical_low_price) - 1) * 100).toFixed(0))}% more</span>
 
   return (
     <section className="info">
@@ -22,9 +26,9 @@ export const GameInfo = (props) => {
       <p>Playtime: {min_playtime} - {max_playtime} minutes</p>
       <p>Average User Rating: {average_user_rating.toFixed(2)}</p>
       <p>Minimum age: {min_age}</p>
-      <p>Price: ${price} &nbsp;&nbsp;&nbsp; {disc}</p>
-      <p>MSRP: ${msrp}</p>
-      <p>Historical Low Price: ${historical_low_price}</p>
+      <p>Price: ${price}</p>
+      <p>MSRP: ${msrp} &nbsp;&nbsp;&nbsp; {disc}</p>
+      <p>Historical Low Price: ${historical_low_price} &nbsp;&nbsp;&nbsp; {lowComp}</p>
       <p>Publisher: {primary_publisher}</p>
       <div>
         <p>Mechanics: </p>
