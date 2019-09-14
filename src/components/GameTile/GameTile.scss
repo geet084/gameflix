@@ -10,6 +10,10 @@
   min-width: 180px;
   width: 18%;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .title {
     color: black;
     font-size: 1.5rem;
