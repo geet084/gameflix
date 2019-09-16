@@ -46,8 +46,8 @@ const App = () => {
     if (max_players === 6) params += `gt_max_players=${max_players}&`;
     else if (max_players > 0 && max_players < 6) params += `max_players=${max_players}&`;
 
-    if (max_playtime > 120) params += `min_playtime=120&`;
-    else if (max_playtime > 0 && max_playtime <= 120) params += `max_playtime=${max_playtime}&`
+    if (max_playtime > 120) params += `gt_min_playtime=119&`;
+    else if (max_playtime > 0 && max_playtime <= 120) params += `lt_max_playtime=${max_playtime}&`
 
     return params;
   }
