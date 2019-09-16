@@ -26,7 +26,7 @@ export const GameTile = (props) => {
       {<h4 className="title">{name.length > maxNameLength ? `${shortName} ...` : name}</h4>}
       <div className="btm-text">
         <p>
-          <span> &nbsp;{min_players} - {max_players} <i className="fas fa-users"></i> </span>
+          <span> {min_players} - {max_players} <i className="fas fa-users"></i> </span>
           <span> {min_age}+&nbsp; </span>
         </p>
         <p>
