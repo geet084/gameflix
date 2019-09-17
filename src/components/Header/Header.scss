@@ -26,7 +26,6 @@ header {
 
     .block {
       display: flex;
-      margin: auto;
     }
 
     .drop-downs {
@@ -64,6 +63,6 @@ header {
 
 @media screen and (max-width: 800px) {
   header .options span {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   }
 }
