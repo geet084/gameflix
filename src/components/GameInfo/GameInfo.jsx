@@ -23,11 +23,11 @@ export const GameInfo = (props) => {
     <section className="info">
       <div className="top">
         <span className="icon" onClick={() => toggle(name)}>
-          <i class="far fa-arrow-alt-circle-left"></i>
+          <i className="far fa-arrow-alt-circle-left"></i>
         </span>
         <h2 className="title">{name}</h2>
         <span className="icon" >
-          <i class="far fa-heart"></i>
+          <i className="far fa-heart"></i>
         </span>
       </div>
       <img src={images.small} alt={name} />
