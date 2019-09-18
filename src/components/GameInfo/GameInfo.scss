@@ -27,10 +27,29 @@
 
   .desc {
     overflow: hidden;
+    width: 85%;
+    margin: 10px auto;
+    text-align: left;
   }
 
   .ellipsis {
     text-overflow: ellipsis;
+  }
+
+  .mech-cats {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    div {
+      margin: 10px;
+      width: 40%;
+      text-align: left;
+
+      p {
+        margin: 7px 0;
+      }
+    }
   }
 
   .top {

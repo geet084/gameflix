@@ -47,11 +47,13 @@ export const GameInfo = (props) => {
       {msrp && <p>MSRP: ${msrp} &nbsp;&nbsp;&nbsp; {disc}</p>}
       {historical_low_price && <p>Historical Low Price: ${historical_low_price} &nbsp;&nbsp;&nbsp; {lowComp}</p>}
       {primary_publisher && <p>Publisher: {primary_publisher}</p>}
-      <div>
-        <p>Mechanics: </p>
-      </div>
-      <div>
-        <p>Categories: </p>
+      <div className="mech-cats">
+        <div>
+          <h5>Mechanics: </h5>
+        </div>
+        <div>
+          <h5>Categories: </h5>
+        </div>
       </div>
     </section>
   )
