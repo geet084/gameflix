@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const GameInfo = (props) => {
-  const { toggle, name, images, min_players, max_players, min_playtime, max_playtime, min_age, description, price, msrp, discount, primary_publisher, average_user_rating, historical_low_price } = props;
+  const { toggle, name, images, min_players, max_players, min_playtime, max_playtime, min_age, description, price, msrp, discount, primary_publisher, average_user_rating, historical_low_price, mechanics, categories } = props;
 
   const [showMore, setShowMore] = useState(false);
 
@@ -50,9 +50,11 @@ export const GameInfo = (props) => {
       <div className="mech-cats">
         <div>
           <h5>Mechanics: </h5>
+          {mechanics.map(mechanic => <p key={mechanic}>{mechanic}</p>)}
         </div>
         <div>
           <h5>Categories: </h5>
+          {categories.map(category => <p key={category}>{category}</p>)}
         </div>
       </div>
     </section>
