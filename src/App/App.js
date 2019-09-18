@@ -13,23 +13,30 @@ const App = () => {
   }
   const [hasError, setErrors] = useState('');
   const [searchTerms, setSearchTerms] = useState(defaultSearch);
+  const [mechanics, setMechanics] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    fetchData()
+    fetchData(process.env.REACT_APP_MECHANICS_URL, setMechanics)
+    fetchData(process.env.REACT_APP_CATEGORIES_URL, setCategories)
+  }, [])
+
+  useEffect(() => {
+    const params = getParams();
+
+    fetchData(process.env.REACT_APP_SEARCH_URL + params, setGames)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerms]);
 
-  const fetchData = async () => {
-    const url = process.env.REACT_APP_SEARCH_URL;
+  const fetchData = async (url, stateToSet) => {
     const client = process.env.REACT_APP_CLIENT;
-    let params = getParams();
 
     try {
-      const response = await fetch(url + params + client);
+      const response = await fetch(url + client);
       if (!response.ok) throw Error(response.statusText);
       const result = await response.json();
-      setGames(result.games);
+      stateToSet(result[Object.keys(result)]);
     } catch ({ message }) {
       setErrors(`Oops! It looks like there was an issue: ${message}`);
     }
@@ -75,7 +82,7 @@ const App = () => {
         handleSearch={handleSearch}
         handleReset={handleReset}
       />
-      {games[0] ? <Games games={listedGames} /> : <Loading />}
+      {games[0] ? <Games games={listedGames} mechanics={mechanics} categories={categories} /> : <Loading />}
     </main>
   );
 }
