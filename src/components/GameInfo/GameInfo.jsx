@@ -19,8 +19,15 @@ export const GameInfo = (props) => {
 
   return (
     <section className="info">
-      <span className="back" onClick={() => toggle(name)}>X</span>
-      <h2 className="title">{name}</h2>
+      <div className="top">
+        <span className="icon" onClick={() => toggle(name)}>
+          <i class="far fa-arrow-alt-circle-left"></i>
+        </span>
+        <h2 className="title">{name}</h2>
+        <span className="icon" >
+          <i class="far fa-heart"></i>
+        </span>
+      </div>
       <img src={images.small} alt={name} />
       {min_players && max_players && <p>Players: {min_players} - {max_players}</p>}
       {min_playtime && max_playtime && <p>Playtime: {min_playtime} - {max_playtime} minutes</p>}
@@ -32,11 +39,11 @@ export const GameInfo = (props) => {
       {primary_publisher && <p>Publisher: {primary_publisher}</p>}
       <div>
         <p>Mechanics: </p>
-        </div>
+      </div>
       <div>
-      <p>Categories: </p>
-    </div>
-    <p className="desc ellipsis">{shortDesc} ...</p>
+        <p>Categories: </p>
+      </div>
+      <p className="desc ellipsis">{shortDesc} ...</p>
     </section>
   )
 }
