@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const GameInfo = (props) => {
   const { toggle, name, images, min_players, max_players, min_playtime, max_playtime, min_age, description, price, msrp, discount, primary_publisher, average_user_rating, historical_low_price } = props;
+
+  const [showMore, setShowMore] = useState(false);
 
   const maxDescLength = 250;
   let shortDesc = '';
@@ -29,6 +31,14 @@ export const GameInfo = (props) => {
         </span>
       </div>
       <img src={images.small} alt={name} />
+      {
+        showMore
+          ? <p className="desc">{description}</p>
+          : <p className="desc ellipsis">{shortDesc} ...</p>
+      }
+      <span className="show" onClick={() => setShowMore(!showMore)}>
+        {`Show ${showMore ? 'Less' : 'More'}`}
+      </span>
       {min_players && max_players && <p>Players: {min_players} - {max_players}</p>}
       {min_playtime && max_playtime && <p>Playtime: {min_playtime} - {max_playtime} minutes</p>}
       {average_user_rating && <p>Average User Rating: {average_user_rating.toFixed(2)}</p>}
@@ -43,7 +53,6 @@ export const GameInfo = (props) => {
       <div>
         <p>Categories: </p>
       </div>
-      <p className="desc ellipsis">{shortDesc} ...</p>
     </section>
   )
 }
