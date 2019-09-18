@@ -9,16 +9,22 @@ export const Header = ({ handleSearch, handleReset, name, num, min_players, max_
   return (
     <header>
       <h1 className="title">GAMEFLIX</h1>
-      <p> results:  {num}</p>
       <div className="options">
-        <button onClick={handleReset}>Reset</button>
-        <span>
+        <span className="block">
+          <p> results:  <span className="num">{num}</span></p>
+          <button onClick={handleReset}>Reset</button>
           <input id="name" type="text" value={name} onChange={handleSearch} placeholder="Search" />
         </span>
-        <Dropdown id="min_players" name="Min Players" value={min_players} range={players} handleSearch={handleSearch} />
-        <Dropdown id="max_players" name="Max Players" value={max_players} range={players} handleSearch={handleSearch} />
-        <Dropdown id="max_playtime" name="Playtime (mins)" value={max_playtime} range={playTime} handleSearch={handleSearch} />
-        <Dropdown id="min_rating" name="Avg. User Rating" value={min_rating} range={stars} handleSearch={handleSearch} />
+        <div className="drop-downs">
+          <span className="block">
+            <Dropdown id="min_players" name="Min Players:&nbsp;&nbsp;" value={min_players} range={players} handleSearch={handleSearch} />
+            <Dropdown id="max_playtime" name="Playtime (mins):&nbsp;&nbsp;" value={max_playtime} range={playTime} handleSearch={handleSearch} />
+          </span>
+          <span className="block">
+            <Dropdown id="max_players" name="Max Players:&nbsp;&nbsp;" value={max_players} range={players} handleSearch={handleSearch} />
+            <Dropdown id="min_rating" name="Avg. User Rating:&nbsp;&nbsp;" value={min_rating} range={stars} handleSearch={handleSearch} />
+          </span>
+        </div>
       </div>
     </header>
   )

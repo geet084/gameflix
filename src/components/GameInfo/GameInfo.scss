@@ -2,13 +2,75 @@
   background-color: #fff;
   padding: 10px;
 
-  .title {
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
+  img {
+    margin-top: 90px;
   }
-  .back {
+
+  .title {
+    margin: 5px auto 10px;
+  }
+
+  .less {
+    color: green;
+  }
+
+  .more {
     color: red;
-    font-size: 4rem;
+  }
+
+  .show {
+    color: #b7b7b7;
+    border: 1px solid #b7b7b7;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .desc {
+    overflow: hidden;
+    width: 85%;
+    margin: 10px auto;
+    text-align: left;
+  }
+
+  .ellipsis {
+    text-overflow: ellipsis;
+  }
+
+  .mech-cats {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    div {
+      margin: 10px;
+      width: 40%;
+      text-align: left;
+
+      p {
+        margin: 7px 0;
+      }
+    }
+  }
+
+  .top {
+    background-color: #fff;
+    box-shadow: 0px 5px 5px 0px rgba(255, 255, 255, 0.99);
+    display: flex;
+    justify-content: space-between;
+    margin: auto -10px;
+    position: fixed;
+    top: 154px;
+    width: 100%;
+
+    .icon {
+      color: #b7b7b7;
+      font-size: 2rem;
+      padding: 5px;
+
+      &:hover {
+        color: #000;
+        cursor: pointer;
+      }
+    }
   }
 }

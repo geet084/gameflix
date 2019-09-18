@@ -7,8 +7,8 @@ export const Dropdown = ({ id, name, value, range, handleSearch }) => {
     options = range.map((val, i) => <option key={val} value={i}>{val}</option>);
   } else {
     options = range.map(val => {
-      const value = isNaN(parseInt(val.split(' ').shift())) ? 121 : val;
-      return <option key={val} value={value}>{val}</option>
+      const value = parseInt(val.split(' ').shift());
+      return <option key={val} value={isNaN(value) ? 121 : value}>{val}</option>;
     })
   }
 
