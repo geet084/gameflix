@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const GameInfo = (props) => {
-  const { toggle, name, images, min_players, max_players, min_playtime, max_playtime, min_age, description, price, msrp, discount, primary_publisher, average_user_rating, historical_low_price, mechanics, categories } = props;
+  const { toggle, handleFaves, id, name, images, min_players, max_players, min_playtime, max_playtime, min_age, description, price, msrp, discount, primary_publisher, average_user_rating, historical_low_price, mechs, cats, fave } = props;
 
   const [showMore, setShowMore] = useState(false);
 
@@ -26,8 +26,8 @@ export const GameInfo = (props) => {
           <i className="far fa-arrow-alt-circle-left"></i>
         </span>
         <h2 className="title">{name}</h2>
-        <span className="icon" >
-          <i className="far fa-heart"></i>
+        <span className="icon" onClick={() =>handleFaves(id)}>
+          {fave ? <i className="far fa-heart fave"></i> : <i className="far fa-heart"></i>}
         </span>
       </div>
       <img src={images.small} alt={name} />
@@ -50,11 +50,11 @@ export const GameInfo = (props) => {
       <div className="mech-cats">
         <div>
           <h5>Mechanics: </h5>
-          {mechanics.map(mechanic => <p key={mechanic}>{mechanic}</p>)}
+          {mechs.map(mech => <p key={mech}>{mech}</p>)}
         </div>
         <div>
           <h5>Categories: </h5>
-          {categories.map(category => <p key={category}>{category}</p>)}
+          {cats.map(cat => <p key={cat}>{cat}</p>)}
         </div>
       </div>
     </section>

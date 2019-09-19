@@ -67,6 +67,13 @@
       font-size: 2rem;
       padding: 5px;
 
+      .fave {
+        color: rgb(255, 129, 129);
+        &:hover {
+          color: red;
+        }
+      }
+
       &:hover {
         color: #000;
         cursor: pointer;
