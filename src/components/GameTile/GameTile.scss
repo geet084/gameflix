@@ -25,16 +25,32 @@
   .btm-text {
     margin: 0 0 3px 0;
 
+    i {
+      font-size: 1rem;
+    }
+
+    .fa-heart {
+      position: relative;
+      top: 2px;
+      right: -1px;
+      font-size: 1.25rem;
+
+      &:hover {
+        color: rgb(255, 129, 129);
+      }
+    }
+
+    .fave {
+      color: rgb(255, 129, 129);
+      &:hover {
+        color: red;
+      }
+    }
+
     p {
       display: flex;
       justify-content: space-between;
       margin: 3px 10px;
     }
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .game {
-    min-width: 310px;
   }
 }
