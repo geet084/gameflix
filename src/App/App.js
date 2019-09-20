@@ -16,6 +16,8 @@ const App = () => {
   const [mechanics, setMechanics] = useState([]);
   const [categories, setCategories] = useState([]);
   const [games, setGames] = useState([]);
+  const [faves, setFaves] = useState([]);
+  const [showFavorites, setShowFavorites] = useState(false);
 
   useEffect(() => {
     fetchData(process.env.REACT_APP_MECHANICS_URL, setMechanics)
@@ -67,10 +69,35 @@ const App = () => {
     setSearchTerms({ ...searchTerms, [target.id]: value });
   }
 
-  const handleReset = () => setSearchTerms({ ...defaultSearch });
+  const handleReset = () => {
+    setSearchTerms({ ...defaultSearch })
+    setShowFavorites(false)
+  };
+
+  const handleFaves = (gameId) => {
+    const game = faves.find(fave => fave.id === gameId)
+    let favorites
+
+    if (game) favorites = faves.filter(fave => fave.id !== gameId)
+    else favorites = [...faves, { ...games.find(game => game.id === gameId) }]
+
+    setFaves(favorites)
+  };
+
+  const showFaves = () => setShowFavorites(!showFavorites);
 
   const listedGames = games.filter(game => {
     return game && (game.average_user_rating >= searchTerms.min_rating || !searchTerms.min_rating)
+  });
+  
+  const faveGames = faves.filter(game => {
+    return (
+      game
+      && ((game.min_players >= searchTerms.min_players) || !searchTerms.min_players)
+      && ((game.max_players <= searchTerms.max_players) || !searchTerms.max_players)
+      && ((game.max_playtime <= searchTerms.max_playtime) || !searchTerms.max_playtime)
+      && ((game.average_user_rating.toFixed(1) >= searchTerms.min_rating) || !searchTerms.min_rating)
+    )
   });
 
   return (
@@ -78,11 +105,23 @@ const App = () => {
       {hasError !== "" && <h3 className="err-msg">{hasError}</h3>}
       <Header
         {...searchTerms}
-        num={listedGames.length}
+        num={showFavorites ? faves.length : listedGames.length}
+        faves={faves.length}
+        showFaves={showFaves}
         handleSearch={handleSearch}
         handleReset={handleReset}
       />
-      {games[0] ? <Games games={listedGames} mechanics={mechanics} categories={categories} /> : <Loading />}
+      {
+        games[0]
+          ? <Games
+            games={showFavorites ? faveGames : listedGames}
+            faves={faves}
+            mechanics={mechanics}
+            categories={categories}
+            handleFaves={handleFaves}
+          />
+          : <Loading />
+      }
     </main>
   );
 }
