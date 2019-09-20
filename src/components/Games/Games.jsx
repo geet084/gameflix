@@ -10,8 +10,8 @@ export const Games = ({ games, mechanics, categories, faves, handleFaves }) => {
     else setselectedGame('')
   }
   
-  const gamesList = games.map(game => {
-    game.fave = faves.includes(game.id)
+  let gamesList = games.map(game => {
+    game.fave = faves.find(fave => fave.id === game.id)
     return game
   })
 
