@@ -116,6 +116,7 @@ const App = () => {
           ? <Games
             games={showFavorites ? faveGames : listedGames}
             faves={faves}
+            showFaves={showFavorites}
             mechanics={mechanics}
             categories={categories}
             handleFaves={handleFaves}
