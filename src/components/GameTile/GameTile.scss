@@ -9,9 +9,13 @@
   margin: 15px 10px;
   min-width: 180px;
   width: 18%;
+  transition: .3s ease-in-out;
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.05);
+    transition: .3s ease-in-out;
+    box-shadow: 5px 5px 15px -7px rgba(0, 0, 0, 0.9);
   }
 
   .title {
