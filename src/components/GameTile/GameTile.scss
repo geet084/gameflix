@@ -31,6 +31,11 @@
 
     i {
       font-size: 1rem;
+      transition: .3s ease;
+
+      &:hover {
+        transition: .3s ease;
+      }
     }
 
     .fa-heart {
