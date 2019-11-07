@@ -73,15 +73,19 @@
       color: #b7b7b7;
       font-size: 2rem;
       padding: 5px;
-
+      transition: .3s ease;
+      
       .fave {
+        transition: .3s ease;
         color: rgb(255, 129, 129);
         &:hover {
+          transition: .3s ease;
           color: red;
         }
       }
-
+      
       &:hover {
+        transition: .3s ease;
         color: rgb(255, 129, 129);
         cursor: pointer;
       }
