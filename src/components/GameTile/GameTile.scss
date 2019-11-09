@@ -32,10 +32,16 @@
     i {
       font-size: 1rem;
       transition: .3s ease;
-
+      
       &:hover {
         transition: .3s ease;
       }
+    }
+    
+    .fa-star {
+      position: relative;
+      bottom: 1px;
+      padding-left: 2px;
     }
 
     .fa-heart {
