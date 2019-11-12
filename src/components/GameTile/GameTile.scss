@@ -37,6 +37,27 @@
         transition: .3s ease;
       }
     }
+
+    .users {
+      width: 20px;
+      position: relative;
+      bottom: -2px;
+      left: 2px;
+    }
+
+    .clock {
+      width: 16px;
+      position: relative;
+      bottom: -2px;
+      right: 2px;
+    }
+
+    .star {
+      width: 19px;
+      position: relative;
+      bottom: -1px;
+      left: 1px;
+    }
     
     .fa-star {
       position: relative;
@@ -44,14 +65,26 @@
       padding-left: 2px;
     }
 
-    .fa-heart {
+    .heart {
       position: relative;
       top: 2px;
       right: -1px;
       font-size: 1.25rem;
 
       &:hover {
-        color: rgb(255, 129, 129);
+        color: red;
+      }
+    }
+    
+    .fave-heart {
+      position: relative;
+      top: 2px;
+      right: -1px;
+      font-size: 1.25rem;
+      color: rgb(255, 129, 129);
+
+      &:hover {
+        color: red
       }
     }
 
