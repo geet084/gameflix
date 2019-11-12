@@ -9,7 +9,7 @@
 - For testing suite: ```npm test```
 
 ## Deployed to Heroku
-[Gameflix](https://gameflix-1810.herokuapp.com/)
+[Gameflix](https://gameflix1810.herokuapp.com/)
 
 
 ## About
