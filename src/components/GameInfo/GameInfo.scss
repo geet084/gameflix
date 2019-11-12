@@ -17,16 +17,17 @@
   .more {
     color: red;
   }
-
+  
   .show {
     color: #b7b7b7;
     border: 1px solid #b7b7b7;
     padding: 5px;
     border-radius: 10px;
-    transition: .3s ease;
-
+    transition: 0.3s ease;
+    
     &:hover {
-      transition: .3s ease;
+      cursor: pointer;
+      transition: 0.3s ease;
       color: black;
       border-color: black;
     }
@@ -72,21 +73,32 @@
     .icon {
       color: #b7b7b7;
       font-size: 2rem;
-      padding: 5px;
-      transition: .3s ease;
-      
-      .fave {
-        transition: .3s ease;
+      padding: 10px;
+      transition: 0.3s ease;
+      width: 32px;
+
+      .fave-heart {
+        transition: 0.3s ease;
         color: rgb(255, 129, 129);
         &:hover {
-          transition: .3s ease;
+          transition: 0.3s ease;
           color: red;
         }
       }
-      
+    }
+
+    .backArrow {
       &:hover {
-        transition: .3s ease;
-        color: rgb(255, 129, 129);
+        transition: 0.3s ease;
+        color: black;
+        cursor: pointer;
+      }
+    }
+
+    .faveIcon {
+      &:hover {
+        transition: 0.3s ease;
+        color: red;
         cursor: pointer;
       }
     }
