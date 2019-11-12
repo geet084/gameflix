@@ -3,6 +3,7 @@ header {
   height: 75px;
   position: fixed;
   top: 0;
+  z-index: 1;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -26,6 +27,16 @@ header {
 
     .block {
       display: flex;
+
+      .faves {
+        border: 1px solid grey;
+        padding: 3px;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: #8fee90;
+        }
+      }
     }
 
     .drop-downs {

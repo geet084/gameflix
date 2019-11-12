@@ -17,12 +17,20 @@
   .more {
     color: red;
   }
-
+  
   .show {
     color: #b7b7b7;
     border: 1px solid #b7b7b7;
     padding: 5px;
     border-radius: 10px;
+    transition: 0.3s ease;
+    
+    &:hover {
+      cursor: pointer;
+      transition: 0.3s ease;
+      color: black;
+      border-color: black;
+    }
   }
 
   .desc {
@@ -65,10 +73,32 @@
     .icon {
       color: #b7b7b7;
       font-size: 2rem;
-      padding: 5px;
+      padding: 10px;
+      transition: 0.3s ease;
+      width: 32px;
 
+      .fave-heart {
+        transition: 0.3s ease;
+        color: rgb(255, 129, 129);
+        &:hover {
+          transition: 0.3s ease;
+          color: red;
+        }
+      }
+    }
+
+    .backArrow {
       &:hover {
-        color: #000;
+        transition: 0.3s ease;
+        color: black;
+        cursor: pointer;
+      }
+    }
+
+    .faveIcon {
+      &:hover {
+        transition: 0.3s ease;
+        color: red;
         cursor: pointer;
       }
     }
