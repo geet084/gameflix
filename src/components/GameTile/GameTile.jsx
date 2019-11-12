@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from '../Icon/Icon';
 
 function validateHasValue(props) {
   let updatedProps = { ...props }
@@ -32,12 +33,14 @@ export const GameTile = (props) => {
       <h4 className="title">{name.length > maxNameLength ? `${shortName} ...` : name}</h4>
       <div className="btm-text">
         <p>
-          <span> {min_players} - {max_players} <i className="fas fa-users"></i> </span>
-          <i className={`far fa-heart${fave ? ' fave' : ''}`} onClick={toggleFaves}></i>
+          <span> {min_players} - {max_players} <Icon type="users" /> </span>
+          <span onClick={toggleFaves}>
+            {fave ? <Icon type="tileFaveHeart" /> : <Icon type="tileHeart" />}
+          </span>
         </p>
         <p>
-          <span> <i className="far fa-clock"></i> {min_playtime} - {max_playtime} </span>
-          <span> {average_user_rating.toFixed(1)}<i className="fas fa-star"></i> </span>
+          <span> <Icon type="clock" /> {min_playtime} - {max_playtime} </span>
+          <span> {average_user_rating.toFixed(1)} <Icon type="star" /> </span>
         </p>
       </div>
     </section>
